@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+		"types": ["jest"],
+		"module": "ESNext", 
+		"target": "ESNext", 
+		"strict": true, 
+		"esModuleInterop": true, 
+		"forceConsistentCasingInFileNames": true
+    }
+}
