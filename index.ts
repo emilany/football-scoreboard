@@ -36,7 +36,7 @@ export const startNewMatch = (homeTeam: string, awayTeam: string): string => {
 }
 
 /**
- * Updates the scores for a match.
+ * Updates the scores for an ongoing match.
  * @param matchId the match ID
  * @param homeTeamScore the home team score
  * @param awayTeamScore the away team score
