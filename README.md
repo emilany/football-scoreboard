@@ -57,6 +57,14 @@ const matchSummaryUpdated = getMatchSummary()
 console.log('Updated match summary', matchSummaryUpdated)
 ```
 
+### Running the project:
+
+1. Create a `.ts` file (e.g `scoreboard.ts`) and add the sample usage code
+2. Use the `tsc` command to compile the TypeScript file into JavaScript
+    - if typescript is not installed, run `npm install -g typescript` 
+    - run `tsc scoreboard.ts`
+3. Run the JavaScript file with `node [filename].js`
+
 ## Assumptions
 
 - match IDs are unique
@@ -66,3 +74,5 @@ console.log('Updated match summary', matchSummaryUpdated)
 ## Limitations
 
 - uses in-memory storage; data is not persisted
+- the current order is kept if the matches have the same start time and total scores
+    - to help, add another sorting criteria (ie using the `matchId` or `homeTeam`)
