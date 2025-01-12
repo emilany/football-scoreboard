@@ -26,35 +26,33 @@ A scoreboard library for the Live Football World Cup that shows all the ongoing 
 ## Sample Usage
 
 ```ts
-import { 
-    initialiseScoreboard, 
-    startNewMatch, 
-    updateMatchScore, 
-    finishMatch, 
-    getMatchSummary 
-} from './index'
+import { Scoreboard } from './index'
 
-// initialise the scoreboard
-initialiseScoreboard()
+// create a new instance of Scoreboard
+const scoreboard = new Scoreboard()
 
 // start new matches
-const matchId1 = startNewMatch('Denmark', 'Germany')
-const matchId2 = startNewMatch('Netherlands', 'Japan')
+const matchId1 = scoreboard.startNewMatch('Denmark', 'Germany')
+const matchId2 = scoreboard.startNewMatch('Netherlands', 'Japan')
 
 // update match scores
-updateMatchScore(matchId1, 1, 0)
-updateMatchScore(matchId2, 1, 2)
+scoreboard.updateMatchScore(matchId1, 1, 0)
+scoreboard.updateMatchScore(matchId2, 1, 2)
 
 // get match summary
-const matchSummary = getMatchSummary()
+const matchSummary = scoreboard.getMatchSummary()
 console.log('Current match summary', matchSummary)
 
 // finish a match
-finishMatch(matchId1)
+scoreboard.finishMatch(matchId1)
 
 // get updated match summary
-const matchSummaryUpdated = getMatchSummary()
+const matchSummaryUpdated = scoreboard.getMatchSummary()
 console.log('Updated match summary', matchSummaryUpdated)
+
+// get a specific match by ID
+const match = scoreboard.getMatchById(matchId2)
+console.log('Remaining match', match)
 ```
 
 ### Running the project:
@@ -63,7 +61,7 @@ console.log('Updated match summary', matchSummaryUpdated)
 2. Use the `tsc` command to compile the TypeScript file into JavaScript
     - if typescript is not installed, run `npm install -g typescript` 
     - run `tsc scoreboard.ts`
-3. Run the JavaScript file with `node [filename].js`
+3. Run the JavaScript file with `node scoreboard.js`
 
 ## Assumptions
 
