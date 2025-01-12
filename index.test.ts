@@ -63,10 +63,7 @@ describe('Scoreboard', () => {
     
     it('should finish an unknown match', () => {
         const matchId = 'match_id'
-        scoreboard.finishMatch(matchId)
-    
-        const summary = scoreboard.getMatchSummary()
-        expect(summary.length).toBe(0)
+        expect(() => scoreboard.finishMatch(matchId)).toThrow(`Unable to finish match. Match with ID ${matchId} not found`)
     })
     
     it('should get the match summary with different total scores', () => {

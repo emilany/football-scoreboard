@@ -56,6 +56,9 @@ export class Scoreboard {
 	 * @param matchId the match ID
 	 */
 	finishMatch(matchId: string) {
+		const currentMatch = this.scoreboard.find(match => match.matchId === matchId)
+		if (!currentMatch) throw new Error(`Unable to finish match. Match with ID ${matchId} not found`)
+
 		this.scoreboard = this.scoreboard.filter(match => match.matchId !== matchId)
 	}
 
