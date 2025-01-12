@@ -61,7 +61,7 @@ describe('Scoreboard', () => {
         expect(summary.length).toBe(0)
     })
     
-    it('should finish an unknown match', () => {
+    it('should throw an error when finish an unknown match', () => {
         const matchId = 'match_id'
         expect(() => scoreboard.finishMatch(matchId)).toThrow(`Unable to finish match. Match with ID ${matchId} not found`)
     })
