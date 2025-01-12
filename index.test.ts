@@ -92,4 +92,17 @@ describe('Scoreboard', () => {
         expect(summary[1].homeTeam).toBe('Netherlands')
     })
     
+    it('should get a specific match by ID', () => {
+        const matchId = scoreboard.startNewMatch('Denmark', 'Germany')
+    
+        const match = scoreboard.getMatchById(matchId)
+        expect(match).toBeDefined()
+        expect(match?.homeTeam).toBe('Denmark')
+        expect(match?.awayTeam).toBe('Germany')
+    })
+
+    it('should throw an error when getting a non-existent match', () => {
+        const matchId = 'match_id'
+        expect(() => scoreboard.getMatchById(matchId)).toThrow(`Unable to get match. Match with ID ${matchId} not found`)
+    })
 })
