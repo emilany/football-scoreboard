@@ -82,4 +82,11 @@ export class Scoreboard {
 			})
 			.map(match => match.match)
 	}
+
+	getMatchById(matchId: string): Match {
+		const currentMatch = this.scoreboard.find(match => match.matchId === matchId)
+		if (!currentMatch) throw new Error(`Unable to get match. Match with ID ${matchId} not found`)
+
+		return currentMatch
+	}
 }
